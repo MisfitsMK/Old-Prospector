@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="interface.css" />
+	<title>Patch Clicker</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<meta name="description" content="Patch Clicker: Clicking is your verb to riches" />
+  	
+<!--
+		Patch Clicker
+		Copyright (C) 2015 Patches
+
+		This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+
+		You should have received a copy of the GNU General Public License
+		along with this program (if you are reading this on the original
+		author's website, you can find a copy at
+		<http://www.gnu.org/licenses/>.
+	-->
+</head>
+<body style="background-color:tan" onload="load()">
+<b>
+<center>
+<div style="background-color:brown; color:gold; width:100%"><pre>
+  ______   __        _______         _______   _______    ______    ______   _______   ________   ______   ________  ______   _______  
+ /      \ /  |      /       \       /       \ /       \  /      \  /      \ /       \ /        | /      \ /        |/      \ /       \ 
+/$$$$$$  |$$ |      $$$$$$$  |      $$$$$$$  |$$$$$$$  |/$$$$$$  |/$$$$$$  |$$$$$$$  |$$$$$$$$/ /$$$$$$  |$$$$$$$$//$$$$$$  |$$$$$$$  |
+$$ |  $$ |$$ |      $$ |  $$ |      $$ |__$$ |$$ |__$$ |$$ |  $$ |$$ \__$$/ $$ |__$$ |$$ |__    $$ |  $$/    $$ |  $$ |  $$ |$$ |__$$ |
+$$ |  $$ |$$ |      $$ |  $$ |      $$    $$/ $$    $$< $$ |  $$ |$$      \ $$    $$/ $$    |   $$ |         $$ |  $$ |  $$ |$$    $$< 
+$$ |  $$ |$$ |      $$ |  $$ |      $$$$$$$/  $$$$$$$  |$$ |  $$ | $$$$$$  |$$$$$$$/  $$$$$/    $$ |   __    $$ |  $$ |  $$ |$$$$$$$  |
+$$ \__$$ |$$ |_____ $$ |__$$ |      $$ |      $$ |  $$ |$$ \__$$ |/  \__$$ |$$ |      $$ |_____ $$ \__/  |   $$ |  $$ \__$$ |$$ |  $$ |
+$$    $$/ $$       |$$    $$/       $$ |      $$ |  $$ |$$    $$/ $$    $$/ $$ |      $$       |$$    $$/    $$ |  $$    $$/ $$ |  $$ |
+ $$$$$$/  $$$$$$$$/ $$$$$$$/        $$/       $$/   $$/  $$$$$$/   $$$$$$/  $$/       $$$$$$$$/  $$$$$$/     $$/    $$$$$$/  $$/   $$/ </pre>
+</div>
+<hr>
+</b>
+<center>
+<div>
+	<table style="width:100%" border="0">
+		<td width="50%" margin="0 5 0 5" align="center">
+			<h2>Click the button to pan the river for gold.</h2>
+			<button onClick="panGold()"  style="background-color:gold"><b><h3>Pan for Gold</h3></b></button><br>
+			<font size="16"><b>GoldDust: <br /><span id="gold">0</span> <br />grams</b></font><p />
+			<i>Gold Earn Rate (<span id="goldRate">0</span> / second)</i>		
+		</td>
+		<td width="50%" align="center"> <img width="100%" height="auto" src="prospector.jpg"></td>
+	</table>
+</div>
+</center>
+<hr>
+<section>
+	<table style="width:100%" border ="0">
+		<tr valign="top" align="center">
+			<td width="20%">
+				<h3>Pans: <br /><span id="pans">0</span></h3><br />
+				<b><button onClick="buyPan(1)">Buy Pan</button></b><br />
+				Pan Cost: <span id="panCost">10</span><br />
+				<i>(Pans earn .1 gold dust/second)</i>
+			</td>
+			<td height="200" width="20%">
+				<h3>Rocker Boxes: <br /><span id="rockers">0</span></h3><br />
+				<b><button onClick="buyRockers(1)">Buy Rocker Boxes</button></b><br />
+				Rocker Box Cost: <span id="rockerCost">150</span><br />
+				<i>(Rocker Boxes earn .3 gold dust/second)</i>
+			</td>
+			<td width="20%">
+				<h3>Sluices: <br /><span id="sluices">0</span></h3><br />
+				<b><button onClick="buySluices(1)">Buy Sluices</button></b><br />
+				Sluice Cost: <span id="sluiceCost">1800</span><br />
+				<i>(Sluices earn .7 gold dust/second)</i>
+			</td>
+			<td width="40%" align="left">
+				<b><u>FUTURE ITEMS:</b></i><br />
+				Mules<br />
+				Pack Dogs for Yukon<br />
+				Saloon and Town real estate<br />
+				...
+			</td>
+		</tr>
+	</table>
+</section>
+
+<div>
+<p>Seconds Played: <span id="intervals">0</span></p>
+</div>
+<div>
+<button onClick="saveToDisk()">Save Game</button>
+<button onClick="reset()">Reset Save</button>
+</div>
+<div>
+		<!--
+		<button onClick="cookieClick(100)" >Cookie Click 100</button>
+		-->
+</div>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

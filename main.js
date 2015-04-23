@@ -39,23 +39,29 @@ function panGold()
 		if(luckRoll > 99)
 		{
 			console.log("YOU FOUND A HUGE NUGGET! Second Luck roll was " + secondLuckRoll);
-			earnings = prettify(Math.floor((Math.random()*100)+36)/10);
+			earnings = prettify(Math.floor((Math.random()*100)+360)/10);
 		}
 		else if(luckRoll > 80)
 		{
 			console.log("YOU FOUND A BIG NUGGET! Second Luck roll was " + secondLuckRoll);
-			earnings = prettify(Math.floor((Math.random()*100)+8)/10);
+			earnings = prettify(Math.floor((Math.random()*100)+80)/10);
 		}
 		else
 		{
 			console.log("YOU FOUND A DECENT NUGGET! Second Luck roll was " + secondLuckRoll);
-			earnings = prettify(Math.floor((Math.random()*100)+3)/10);
+			earnings = prettify(Math.floor((Math.random()*100)+30)/10);
 		};
+
+		//Make the prospector say something new
+		newPhrase();
 	}
 	else if(luckRoll > 94)
 	{
+		//Make the prospector say something new
+		newPhrase();
+
 		console.log("YOU FOUND A SMALL NUGGET! Luck roll was " + luckRoll);
-		earnings = prettify(Math.floor((Math.random()*100)+.5)/10);
+		earnings = prettify(Math.floor((Math.random()*100)+10.5)/10);
 	};
 	console.log("you panned for gold and earned " + earnings);
 	gold = gold + earnings;
@@ -195,9 +201,41 @@ function supports_html5_storage() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //DEBUG FUNCTIONS
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var intervals = 0;
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//HELPER FUNCTIONS
+
+function choose(arr) {return arr[Math.floor(Math.random()*arr.length)];}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//PROSPECTOR VOICE TICKER
+function newPhrase()
+{
+	document.getElementById('prospector-ticker').innerHTML = choose(tickerQuotes);
+}
+
+var tickerQuotes = [];
+tickerQuotes = [
+"there's a snake in my boots!",
+"Ol Patches found some gold!",
+"somebody's poisoned the waterhole...",
+"Eureka!",
+"I'm going to be rich, y'hear me?!?!",
+"People will know my name.",
+"No time like the present!"
+];
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //TICK INFORMATION AND DEBUG LOGGING PER INTERVAL
+var intervals = 0;
 function tick()
 {
 	intervals++;

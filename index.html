@@ -27,11 +27,10 @@
 		<http://www.gnu.org/licenses/>.
 	-->
 </head>
-<body style="background-color:tan" onload="load()">
+<body onload="load()">
 <b>
-<center>
-<div style="background-color:brown; color:gold; width:100%"><pre>
-  ______   __        _______         _______   _______    ______    ______   _______   ________   ______   ________  ______   _______  
+<div id="banner-title">
+<pre>  ______   __        _______         _______   _______    ______    ______   _______   ________   ______   ________  ______   _______  
  /      \ /  |      /       \       /       \ /       \  /      \  /      \ /       \ /        | /      \ /        |/      \ /       \ 
 /$$$$$$  |$$ |      $$$$$$$  |      $$$$$$$  |$$$$$$$  |/$$$$$$  |/$$$$$$  |$$$$$$$  |$$$$$$$$/ /$$$$$$  |$$$$$$$$//$$$$$$  |$$$$$$$  |
 $$ |  $$ |$$ |      $$ |  $$ |      $$ |__$$ |$$ |__$$ |$$ |  $$ |$$ \__$$/ $$ |__$$ |$$ |__    $$ |  $$/    $$ |  $$ |  $$ |$$ |__$$ |
@@ -43,61 +42,63 @@ $$    $$/ $$       |$$    $$/       $$ |      $$ |  $$ |$$    $$/ $$    $$/ $$ |
 </div>
 <hr>
 </b>
-<img width="10%" height="auto" src="prospector.jpg">
-<div id="prospector-ticker">Let's get rich!</div>
-<center>
-<div style="width:100%" border="0" margin="0 5 0 5" align="center">
-		<h2>Click the button to pan the river for gold.</h2>
-		<button onClick="panGold()"  style="background-color:gold"><b><h3>Pan for Gold</h3></b></button><br>
-		<font size="16"><b>GoldDust: <br /><span id="gold">0</span> <br />grams</b></font><p />
-		<h3><i>Gold Earn Rate (<span id="goldRate">0</span> / second)</i></h3>		
-</div>
-</center>
-<hr>
-<section>
-	<table style="width:100%" border ="0">
-		<tr valign="top" align="center">
-			<td width="20%">
-				<h3>Pans: <br /><span id="pans">0</span></h3><br />
-				<b><button onClick="buyPan(1)">Buy Pan</button></b><br />
-				Pan Cost: <span id="panCost">10</span><br />
-				<i>(Pans earn .1 gold dust/second)</i>
-			</td>
-			<td height="200" width="20%">
-				<h3>Rocker Boxes: <br /><span id="rockers">0</span></h3><br />
-				<b><button onClick="buyRockers(1)">Buy Rocker Boxes</button></b><br />
-				Rocker Box Cost: <span id="rockerCost">150</span><br />
-				<i>(Rocker Boxes earn .3 gold dust/second)</i>
-			</td>
-			<td width="20%">
-				<h3>Sluices: <br /><span id="sluices">0</span></h3><br />
-				<b><button onClick="buySluices(1)">Buy Sluices</button></b><br />
-				Sluice Cost: <span id="sluiceCost">1800</span><br />
-				<i>(Sluices earn .7 gold dust/second)</i>
-			</td>
-			<td width="40%" align="left">
-				<b><u>FUTURE ITEMS:</b></i><br />
-				Mules<br />
-				Pack Dogs for Yukon<br />
-				Saloon and Town real estate<br />
-				...
-			</td>
-		</tr>
-	</table>
-</section>
+<div id="wrap">
 
-<div>
-<p>Seconds Played: <span id="intervals">0</span></p>
+	<div id="barContainer">
+	
+		<div id="left-sidebar">
+			<img id="prospector-img" width="20%" height="auto" src="prospector.jpg"></img>
+			<span id="prospector-ticker">Let's get rich!</span>
+		</div>
+
+		<div id="middle-bar">
+				<span id="tutorial-text">Click the button to pan the river for gold.</span>
+				<br><button class="pan-gold" onClick="panGold()" ><b><h3>Pan for Gold</h3></b></button><br>
+				<font size="16"><b>GoldDust: <br /><span id="gold">0</span> <br />grams</b></font><p />
+				<h3><i>Gold Earn Rate (<span id="goldRate">0</span> / second)</i></h3>		
+		</div>
+
+		<div id="right-sidebar"
+			<ul id="itemList">
+				<li class="item-prospecting">
+						<h3>Pans: <br /><span id="pans">0</span></h3><br />
+						<b><button class="purchase-item" onClick="buyPan(1)">Buy Pan</button></b><br />
+						Pan Cost: <span id="panCost">10</span><br />
+						<i>(Pans earn .1 gold dust/second)</i>
+				</li>
+				<li class="item-prospecting">
+						<td height="200" width="20%">
+						<h3>Rocker Boxes: <br /><span id="rockers">0</span></h3><br />
+						<b><button onClick="buyRockers(1)">Buy Rocker Boxes</button></b><br />
+						Rocker Box Cost: <span id="rockerCost">150</span><br />
+						<i>(Rocker Boxes earn .3 gold dust/second)</i>
+				</li>
+				<li class="item-prospecting">
+						<h3>Sluices: <br /><span id="sluices">0</span></h3><br />
+						<b><button onClick="buySluices(1)">Buy Sluices</button></b><br />
+						Sluice Cost: <span id="sluiceCost">1800</span><br />
+						<i>(Sluices earn .7 gold dust/second)</i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div width="40%" align="center">
+		<b><u>FUTURE ITEMS:</b></i><br />
+		Mules<br />
+		Pack Dogs for Yukon<br />
+		Saloon and Town real estate<br />
+		...
+	</div>
 </div>
-<div>
-<button onClick="saveToDisk()">Save Game</button>
-<button onClick="reset()">Reset Save</button>
+
+
+<div id="footer">
+		<col width="40%"><button onClick="saveToDisk()">Save Game</button>
+		<button onClick="reset()">Reset Save</button></col>
+		<col width="40%">Seconds Played: <span id="intervals">0</span></col>
 </div>
-<div>
-		<!--
-		<button onClick="cookieClick(100)" >Cookie Click 100</button>
-		-->
-</div>
+
 <script type="text/javascript" src="main.js"></script>
 
 </body>

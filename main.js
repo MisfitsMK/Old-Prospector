@@ -224,11 +224,13 @@ var tickerQuotes = [];
 tickerQuotes = [
 "there's a snake in my boots!",
 "Ol Patches found some gold!",
-"somebody's poisoned the waterhole...",
+"Somebody's poisoned the waterhole...",
 "Eureka!",
 "I'm going to be rich, y'hear me?!?!",
 "People will know my name.",
-"No time like the present!"
+"No time like the present!",
+"I'm going to disrupt the way we think about prospecting. Ever been to Churning Man?",
+"Comes straight out of the ground if you click hard enough."
 ];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

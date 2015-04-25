@@ -211,29 +211,51 @@ function supports_html5_storage() {
 //HELPER FUNCTIONS
 
 function choose(arr) {return arr[Math.floor(Math.random()*arr.length)];}
+
+function showStuff(boxid){
+	document.getElementById(boxid).style.visibility="visible";
+}
+function hideStuff(boxid){
+	document.getElementById(boxid).style.visibility="hidden";
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //PROSPECTOR VOICE TICKER
 function newPhrase()
 {
-	document.getElementById('prospector-ticker').innerHTML = choose(tickerQuotes);
+	document.getElementById('prospector-ticker').innerHTML = "&quot;"+choose(tickerQuotes)+"&quot;";
 }
 
 var tickerQuotes = [];
 tickerQuotes = [
-"there's a snake in my boots!",
+"There's a snake in my boots!",
 "Ol Patches found some gold!",
 "Somebody's poisoned the waterhole...",
 "Eureka!",
 "I'm going to be rich, y'hear me?!?!",
-"People will know my name.",
+"People will know my name...",
 "No time like the present!",
+"I'm going to be famous...",
 "I'm going to disrupt the way we think about prospecting. Ever been to Churning Man?",
-"Comes straight out of the ground if you click hard enough."
+"Comes straight out of the ground if you click hard enough.",
+"Money is a great servant but a bad master.",
+"The way to wealth depends on just two words, industry and frugality",
+"The more you learn, the more you earn",
+"An investment in knowledge always pays the best interest... or just buy better prospecting equipment.",
+"To acquire money requires valor, to keep money requires prudence, and to spend money well is an art.",
+"More people should learn to tell their dollars where to go instead of asking them where they went",
+"To get rich, you have to be making money while you’re asleep",
+"Wealth is largely the result of habit",
+"The only difference between a rich person and a poor person is how they use their time",
+"Never spend money before you have it",
+"Prospecting is simple, but not easy.",
+"Happiness is not in the mere possession of money; it lies in the joy of achievement, in the thrill of creative effort",
+"Formal education will make you a living; self-education will make you a fortune",
+"Success is one-half working for gold nuggets, and one-half working those nuggets",
+"The greatest single source of wealth is between your ears."
 ];
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //TICK INFORMATION AND DEBUG LOGGING PER INTERVAL

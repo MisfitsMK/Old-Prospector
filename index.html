@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="interface.css" />
+	<link rel="stylesheet" type="text/css" href="csshake.css" />
 	<title>Patch Clicker</title>
 	<link href='http://fonts.googleapis.com/css?family=Smokum|Oldenburg' rel='stylesheet' type='text/css'>
 	<meta name="description" content="Patch Clicker: Clicking is your verb to riches" />
@@ -36,31 +37,31 @@
 	
 	<div class="flex-prospector">
 		<img id="prospector-img" src="prospector.jpg"></img>
-		<div id="prospector-ticker">"Let's get rich!"</div>
+		<div id="prospector-ticker">"Let&rsquo;s get rich!"</div>
 	</div>
 
 	<div class="flex-click-container">
-			<div id="tutorial-text" onclick="hideStuff('tutorial-text')">Click the button to pan the river for gold.</div>
-			<br><button class="pan-gold" onClick="panGold()" ><b><h3>Pan for Gold</h3></b></button><br>
-			<font size="16"><b>GoldDust: <br /><span id="gold">0</span> <br />grams</b></font><p />
-			<h3><i>Gold Earn Rate (<span id="goldRate">0</span> / second)</i></h3>		
+			<div class="flex-click-small" onclick="hideStuff('tutorial-text')">Click the button to pan the river for gold.</div>
+			<div class="flex-click-small"><font size="16px"><b>GoldDust: <br /><span id="gold">0</span> <br />grams</b></font></div>
+			<div class="flex-click-small"><button class="gold-button shadow animate pan-gold" onClick="panGold()" ><h3>Pan for Gold</h3></button></div>
+			<div class="flex-click-small"><i>Gold Earn Rate (<span id="goldRate">0</span> / second)</i></div>
 	</div>
 	
 	<div class="flex-tools-list" >
-		<div class="flex-tools-list-item">
-			<button class="purchase-item" onClick="buyPan(1)">Buy Pan</button>
+		<div class="flex-tools-list-item ">
+			<button id="button-buy-pan"class="purchase-item action-button shadow animate gray" onClick="buyPan(1)">Buy Pan</button>
 			<h5>Pans: <span id="pans">0</span></h5>
 			Pan Cost: <span id="panCost">10</span><br />
 			<i>(Pans earn .1 gold dust/second)</i>
 		</div>
 		<div class="flex-tools-list-item">
-			<button class="purchase-item" onClick="buyRockers(1)">Buy Rocker Box</button>
+			<button id="button-buy-rocker" class="purchase-item action-button shadow animate gray" onClick="buyRockers(1)">Buy Rocker Box</button>
 			<h5>Rocker Boxes: <span id="rockers">0</span></h5>
 			Rocker Box Cost: <span id="rockerCost">150</span><br />
 			<i>(Rocker Boxes earn .3 gold dust/second)</i>
 		</div>
 		<div class="flex-tools-list-item">
-			<button class="purchase-item" onClick="buySluices(1)">Buy Sluice</button>
+			<button id="button-buy-sluice" class="purchase-item action-button shadow animate gray" onClick="buySluices(1)">Buy Sluice</button>
 			<h5>Sluices: <span id="sluices">0</span></h5>
 			Sluice Cost: <span id="sluiceCost">1800</span><br />
 			<i>(Sluices earn .7 gold dust/second)</i>

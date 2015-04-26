@@ -7,6 +7,10 @@ var pans = 0;
 var rockers = 0;
 var sluices = 0;
 
+var clickBonus = 0; //+how many extra gold per click
+var clickMultiplier = 1; //how much we multiply the click total value by;
+
+var panDurability = 20;	//how much pan starts with when you buy one
 
 function calcPanCostRate(number)
 {var rate = Math.floor(10 * Math.pow(1.1, number)); return rate;};
@@ -63,10 +67,24 @@ function panGold()
 		console.log("YOU FOUND A SMALL NUGGET! Luck roll was " + luckRoll);
 		earnings = prettify(Math.floor((Math.random()*100)+10.5)/10);
 	};
+	
+	//calculate how much bonus we get per click based on clickBonus
+	calculateClickBonus();
+	earnings += clickBonus;
+	
 	console.log("you panned for gold and earned " + earnings);
 	gold = gold + earnings;
 	document.getElementById('gold').innerHTML = prettify(gold);
 };
+
+//calculateClickBonus = for when we have items that add to our base click value
+function calculateClickBonus()
+{
+	///////////////////
+	////////////////////
+	/////////////CODE GOES HERE TOMORROW
+	///////////////////
+}
 
 //buyPan = for when you click the Buy Pan button
 function buyPan(number)
@@ -229,23 +247,23 @@ function newPhrase()
 
 var tickerQuotes = [];
 tickerQuotes = [
-"There's a snake in my boots!",
-"Ol Patches found some gold!",
-"Somebody's poisoned the waterhole...",
+"There&rsquo;s a snake in my boots!",
+"Ol&rsquo; Patches found some gold!",
+"Somebody&rsquo;s poisoned the waterhole...",
 "Eureka!",
-"I'm going to be rich, y'hear me?!?!",
+"I&rsquo;m going to be rich, y&rsquo;hear me?!?!",
 "People will know my name...",
 "No time like the present!",
-"I'm going to be famous...",
-"I'm going to disrupt the way we think about prospecting. Ever been to Churning Man?",
-"Comes straight out of the ground if you click hard enough.",
+"I&rsquo;m going to be famous...",
+"I&rsquo;m going to disrupt the way we think about prospecting. Ever been to Churning Man?",
+"Comes straight out of the ground if you just click hard enough.",
 "Money is a great servant but a bad master.",
 "The way to wealth depends on just two words, industry and frugality",
 "The more you learn, the more you earn",
 "An investment in knowledge always pays the best interest... or just buy better prospecting equipment.",
 "To acquire money requires valor, to keep money requires prudence, and to spend money well is an art.",
 "More people should learn to tell their dollars where to go instead of asking them where they went",
-"To get rich, you have to be making money while you’re asleep",
+"To get rich, you have to be making money while you&rsquo;re asleep",
 "Wealth is largely the result of habit",
 "The only difference between a rich person and a poor person is how they use their time",
 "Never spend money before you have it",

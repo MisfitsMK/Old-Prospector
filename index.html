@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="interface.css" />
 	<link rel="stylesheet" type="text/css" href="csshake.css" />
 	<title>Patch Clicker</title>
-	<link href='http://fonts.googleapis.com/css?family=Smokum|Oldenburg' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Smokum|Oldenburg|Ultra' rel='stylesheet' type='text/css'>
 	<meta name="description" content="Patch Clicker: Clicking is your verb to riches" />
   	
 <!--
@@ -42,12 +42,13 @@
 
 	<div class="flex-click-container">
 			<div class="flex-click-small" onclick="hideStuff('tutorial-text')">Click the button to pan the river for gold.</div>
-			<div class="flex-click-small"><font size="16px"><b>GoldDust: <br /><span id="gold">0</span> <br />grams</b></font></div>
+			<div class="flex-click-small"><span id="gold-text-wrapper">GoldDust: <br /><span id="gold">0</span> <br />grams</span></div>
 			<div class="flex-click-small"><button class="gold-button shadow animate pan-gold" onClick="panGold()" ><h3>Pan for Gold</h3></button></div>
 			<div class="flex-click-small"><i>Gold Earn Rate (<span id="goldRate">0</span> / second)</i></div>
 	</div>
 	
 	<div class="flex-tools-list" >
+		<div class="flex-tools-list-title">GENERAL STORE:</div>
 		<div class="flex-tools-list-item ">
 			<button id="button-buy-pan"class="purchase-item action-button shadow animate gray" onClick="buyPan(1)">Buy Pan</button>
 			<h5>Pans: <span id="pans">0</span></h5>
@@ -61,7 +62,7 @@
 			<i>(Rocker Boxes earn .3 gold dust/second)</i>
 		</div>
 		<div class="flex-tools-list-item">
-			<button id="button-buy-sluice" class="purchase-item action-button shadow animate gray" onClick="buySluices(1)">Buy Sluice</button>
+			<button id="button-buy-sluice" class="purchase-item action-button shadow animate gray" onClick="buySluices(1)">Build Sluice</button>
 			<h5>Sluices: <span id="sluices">0</span></h5>
 			Sluice Cost: <span id="sluiceCost">1800</span><br />
 			<i>(Sluices earn .7 gold dust/second)</i>
@@ -70,7 +71,7 @@
 
 	<div class="flex-notes">
 		<h1>FUTURE ITEMS:</h3><br />
-		<ul style="text-align:left">
+		<ul>
 			<li>Mules</li>
 			<li>Pack Dogs for Yukon</li>
 			<li>Saloon and Town real estate</li>

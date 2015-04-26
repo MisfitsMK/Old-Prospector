@@ -3,13 +3,16 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-
+button::-moz-focus-inner {
+  border: 0;
+}
 body, html{
 	background-color:#8B4513;
 	margin:0;
 	padding:0;
 	font-family: 'Oldenburg', cursive;
-	color:black;
+	color:white;
+	letter-spacing: 1px;
 }
 
 .flex-container {
@@ -31,14 +34,15 @@ body, html{
 
 
 .flex-header {
-	margin-bottom:4px;
+	margin-top:0px;
+	margin-bottom:14px;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 100%;
 	background-color:black; 
 	color:gold; 
-    font-size: 16px;
 	text-align: center;
+	max-height:150px;
 }
 	
 
@@ -47,8 +51,25 @@ body, html{
     flex-shrink: 1;
     flex-basis: 250px;
 	font-size:24px;
+	text-align:center;
 }
 	
+div#prospector-ticker
+{
+	margin-top:8px;
+	margin-left:10px;
+	margin-right:20px;
+	margin-bottom:24px;
+	clear:left;
+	vertical-align:bottom;
+	padding:8px;
+	font-family: 'Oldenburg', cursive;
+	background: rgba(255,255,255, 0.7);
+	border: 2px solid black;
+	color:black;
+	min-height:150px;
+}
+
 
 .flex-click-container {
 	display:flex;
@@ -58,7 +79,7 @@ body, html{
 	align-items:stretch;
     flex-grow: 2;
     flex-shrink: 0;
-    flex-basis: 50%;
+    flex-basis: 35%;
 	text-align:center;
 }
 
@@ -74,6 +95,34 @@ div#tutorial-text{
 	font-size:2em;
 }
 
+span#gold{
+	font-size:2em;
+ 	font-family:'Ultra', serif;
+  -webkit-text-stroke: 1px black;
+	color:gold;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;	
+	margin:0;
+}
+
+span#gold-text-wrapper{
+	font-size:2em;
+ 	font-family:'Ultra', serif;
+  -webkit-text-stroke: 1px black;
+	color:white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;	
+	margin:0;	
+}
+
 .flex-tools-list {
     display:flex;
     flex-direction: column;
@@ -81,15 +130,33 @@ div#tutorial-text{
     justify-content: center;
     align-content: stretch;
     align-items: stretch;
+	flex-basis:340px;
+	background: rgba(0,0,0, 0.7);
+	border: 2px solid black;
+	min-height:150px;
+	padding:6px;
+	color:white;
+}
+.flex-tools-list-title{
+	font-family:'Smokum',cursive;
+	color:gold;
+	text-align:center;
+	font-size:2em;
+    max-width: 340px;
+    flex-grow: 1;
+    flex-shrink: 0;
+	margin-bottom:16px;
+	padding-left:4px;
 }
 
 .flex-tools-list-item{
-    max-width: 240px;
+    max-width: 340px;
     height: 150px;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 100px;
-	border:1px solid black;
+	margin-bottom:16px;
+	padding-left:4px;
 }
 
 button.purchase-item{
@@ -97,7 +164,9 @@ button.purchase-item{
 	font-family: 'Oldenburg',cursive;
 	font-size: 2em;
 	padding: 2px;
-	width: 240px;
+	width: 100%;
+	margin-bottom:0;
+	margin-top:4px;
 }
 
 .flex-notes {
@@ -105,6 +174,9 @@ button.purchase-item{
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 98%;
+	padding-left:30%;
+	padding-right:30%;
+	padding-bottom:100px;
 }
 
 .flex-footer {
@@ -117,22 +189,12 @@ button.purchase-item{
 	
 .flex-footer-item{
 	width:300px;
-	height:auto;
+	min-height:40px;
 	flex-grow:0;
 	flex-shrink:0;
 	flex-basis:0;
 }
 
-p{
-	text-align: left;
-	font-size:20px;
-	font-family: 'Oldenburg', cursive;
-}
-
-h1{
-	font-family:'Smokum',cursive;
-	font-size:5em;
-}
 
 button.pan-gold{
 	font-family: 'Oldenburg', cursive;
@@ -141,15 +203,37 @@ button.pan-gold{
 	background:gold;
 	color:black;
 }
+p{
+	text-align: left;
+	font-size:2em;
+	font-family: 'Oldenburg', cursive;
+	font-spacing:0px;
+}
+
+h1{
+	font-family:'Smokum',cursive;
+	font-size:5em;
+}
 
 h2, h4, tr, td {
 	font-family: 'Oldenburg', cursive;	
 }
 
 h5{
-	font-family:'Smokum', cursive;
+	font-family:'Oldenburg', cursive;
 	font-size:2em;
-	margin:0;
+	font-align:center;
+	color: white;
+   -webkit-text-stroke: 1px black;
+   color: rgba:200,200,200,1;
+   text-shadow:
+       2px 2px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;	
+	   margin:0;
+	letter-spacing: 2px;
 	border:0;
 	padding:0;
 }
@@ -161,16 +245,7 @@ img#prospector-img{
 	max-width:250px;
 }
 
-div#prospector-ticker
-{
-	margin-top:8px;
-	clear:left;
-	text-align:center;
-	vertical-align:bottom;
-	padding:2px;
-	font-family: 'Oldenburg', cursive;
-	height:auto;
-}
+
 
 span#seconds-played{
 	margin-left:10%;
@@ -203,8 +278,8 @@ span#seconds-played{
 
 .gray
 {
-	background-color: #BDBDBD;
-	border-bottom: 5px solid #ababab;
+	background-color: #efefef;
+	border-bottom: 5px solid #eeeeee;
 	text-shadow: 0px -2px #ababab;
 	color:#000;
 }

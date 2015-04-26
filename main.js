@@ -34,6 +34,7 @@ function cookieClick(number)
 //panGold = for when you click the pan gold button
 function panGold()
 {
+
 	var earnings = prettify(Math.floor((Math.random() * 3) + 1)/10);
 	//roll to see if we get lucky!
 	var luckRoll = Math.floor((Math.random()*100)+1);

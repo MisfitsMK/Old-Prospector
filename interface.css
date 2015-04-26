@@ -34,7 +34,7 @@ body, html{
 
 
 .flex-header {
-	margin-top:0px;
+	margin-top:-50px;
 	margin-bottom:14px;
     flex-grow: 1;
     flex-shrink: 0;
@@ -151,12 +151,13 @@ span#gold-text-wrapper{
 
 .flex-tools-list-item{
     max-width: 340px;
-    height: 150px;
+    min-height: 150px;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 100px;
 	margin-bottom:16px;
 	padding-left:4px;
+	padding-bottom:2px;
 }
 
 button.purchase-item{
